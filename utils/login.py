@@ -66,18 +66,19 @@ def login():
 
         submitted = st.form_submit_button("Submit")
 
-        if st.session_state.id != None and st.session_state.secret != None and st.session_state.code != None:
-            login_dict = {
-                'client_id': int(st.session_state.id),
-                'client_secret': str(st.session_state.secret),
-                'code': str(st.session_state.code),
-            }
+        if submitted:
 
-            get_tokens_init(st.session_state.id, st.session_state.secret, st.session_state.code)
+            if st.session_state.id != None and st.session_state.secret != None and st.session_state.code != None:
+                login_dict = {
+                    'client_id': int(st.session_state.id),
+                    'client_secret': str(st.session_state.secret),
+                    'code': str(st.session_state.code),
+                }
 
-    if submitted:
-        with open('configs/login_details.json', 'w') as login:
-            json.dump(login_dict, login)
+                get_tokens_init(st.session_state.id, st.session_state.secret, st.session_state.code)
 
-        tokens_automate()
+            with open('configs/login_details.json', 'w') as login:
+                json.dump(login_dict, login)
+
+            tokens_automate()
 

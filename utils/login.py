@@ -73,7 +73,7 @@ def login():
                 'code': str(st.session_state.code),
             }
 
-        get_tokens_init(st.session_state.id, st.session_state.secret, st.session_state.code)
+            get_tokens_init(st.session_state.id, st.session_state.secret, st.session_state.code)
 
     if submitted:
         with open('configs/login_details.json', 'w') as login:

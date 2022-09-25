@@ -15,6 +15,8 @@ st.sidebar.subheader("Modules")
 view = st.sidebar.radio('Select view', ['Login','Home'], key='view')
 
 if st.session_state.view == "Login":
+    if not os.path.exists('configs'):
+        os.makedirs('configs', exist_ok=True)
     login()
 
 if st.session_state.view == "Home":

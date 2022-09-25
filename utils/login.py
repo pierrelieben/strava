@@ -79,6 +79,6 @@ def login():
 
             with open('configs/login_details.json', 'w') as login:
                 json.dump(login_dict, login)
-
+                
             tokens_automate()
 

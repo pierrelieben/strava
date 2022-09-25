@@ -1,0 +1,7 @@
+sjdhc.py
+strava_activities.csv
+configs/strava_tokens.json
+client.secret
+configs/login_details.json
+app.py
+*pycache*
